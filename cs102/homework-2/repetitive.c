@@ -2,7 +2,7 @@
 int main( int argc, char **argv )
 {
 int i;
-fprintf (stdout, "Andrew Yuan 9/7/2022 102C2022Fall\n");
+fprintf (stdout, "Andrew Yuan 9/7/2022 102C2022Fall\n\n");
 
 for ( i=0;i<25;i = i + 1)
 fprintf (stdout, "Punch\nKick\n");
