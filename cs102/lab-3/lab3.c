@@ -10,8 +10,8 @@ fprintf ( stdout, "x,y,yprime\n" );
 while( x <= 200 )
 {
 y = 1 + x*x;
-yprime = ((1+x*x)+(1+(x-h)*(x-h)))/h;
-yint = ((1+x*x)+((1+(x-h)*(x-h)))/2)*h;
+yprime = ((1+x*x)-(1+(x-h)*(x-h)))/h;
+yint = (((1+x*x)+(1+(x-h)*(x-h)))/2)*h;
 
 fprintf( stdout, "%d;%d;%d;%d\n",x,y,yprime,yint);
 x = x + 1;
