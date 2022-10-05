@@ -3,6 +3,14 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
+
+/*
+ * Andrew Yuan
+* CS102 Fall 2022
+* Homework 5
+* 10-05-2022
+*/
+
 int main(int argc, char **argv) {
   int array[8][12];
   int array2[12][8];

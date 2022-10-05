@@ -3,6 +3,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+/*
+ * Andrew Yuan
+* CS102 Fall 2022
+* Homework 5
+* 10-05-2022
+*/
 
 void fill8x12( int array[8][12] ) {
 
