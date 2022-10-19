@@ -6,8 +6,6 @@ print( """
 <body>
 """ )
 print("<h1>Hello, world!</h1>")
-print("<h1>Hello, world!</h1>")
-print("<h1>Hello, world!</h1>")
 print( """
 </body>
 </html>
