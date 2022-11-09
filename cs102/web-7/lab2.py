@@ -9,8 +9,12 @@ print( """
 <body>
 """ )
 print("<h1>my header</h1>")
-for n in range(100):
-	print("<p>my paragraph</p>")
+i=0
+j=0
+while (i<101):
+	i=i+1
+	j=j+1
+	print ("<p>j %s!</p>" % (j))
 print( """
 </body>
 </html>
