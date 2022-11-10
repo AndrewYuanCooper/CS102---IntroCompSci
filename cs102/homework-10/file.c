@@ -47,7 +47,7 @@ void save(char* filename)
        fprintf( out, "WALL%d %d\n", i,j); 
      }
     }
-   fprintf( out, "X %d",get_location_x(),get_location_y());  	
+   fprintf( out, "X %d %d",get_location_x(),get_location_y());
    fclose( out);
   }
 }

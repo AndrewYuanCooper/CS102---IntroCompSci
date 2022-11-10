@@ -11,7 +11,7 @@ int get_location_x()
 }
 void set_location_x( int s )
 {
-	location_x=x;
+	location_x=s;
 }
 
 int get_location_y()
@@ -20,54 +20,60 @@ int get_location_y()
 }
 void set_location_y( int s )
 {
-        location_y=y;
+        location_y=s;
 }
 
 void print_walls()
 {
 	int i;
+	int j;
 	for( i=0; i<10; i++ )
 	{
-                if( i == location_x )
-                {
-                	fprintf( stdout, "%s", "x" );
-                }
-                else if( is_wall(i) )
-                {
-                	fprintf( stdout, "%s", "##" );
-                }
-                else
-                {
-                	fprintf( stdout, "%s", "." );
-                }
+		for( j=0; j<10; j++ )
+		{
+                	if( i == location_x )
+                	{
+                		fprintf( stdout, "x" );
+                	}
+                	else if( is_wall(i, j) )
+                	{
+                		fprintf( stdout, "##" );
+                	}
+                	else
+                	{
+                		fprintf( stdout, "." );
+                	}
+		}
+	fprintf(stdout, "\n");
 	}
 }
 
 void clear_maze()
 {
 for(int i=0; i<10; i++ )
-	clear_wall(i);
+for(int j=0; j<10; j++ )
+	clear_wall(i, j);
 }
 
-int is_wall( int x )
+int is_wall( int x, int y )
 {
-	return maze[x].wall;
+	return maze[x][y].wall;
 }
 
-void build_wall( int x )
+void build_wall( int x, int y)
 {
-	maze[x].wall = 1;
+	maze[x][y].wall = 1;
 }
 
-void clear_wall( int x )
+void clear_wall( int x, int y)
 {
-	maze[x].wall=0;
+	maze[x][y].wall = 0;
 }
 void move_right()
 {
 	if( (location_x+1) < 10 )
 	{
-		if(is_wall( location_x+1 ) != 1 )
+		if(is_wall( location_x+1, location_y ) != 1 )
 		{
 			location_x = location_x + 1;
 		}
@@ -77,9 +83,30 @@ void move_left()
 {
         if( (location_x-1)>=0 )
         {
-                if( is_wall( location_x-1 ) != 1 )
+                if( is_wall( location_x-1, location_y ) != 1 )
                 {
                         location_x = location_x - 1;
+                }
+        }
+}
+
+void move_up()
+{
+        if( (location_y+1)>=0 )
+        {
+                if( is_wall( location_x ,location_y+1 ) != 1 )
+                {
+                        location_y = location_y + 1;
+                }
+        }
+}
+void move_down()
+{
+        if( (location_y-1)>=0 )
+        {
+                if( is_wall( location_x ,location_y-1 ) != 1 )
+                {
+                        location_y = location_y - 1;
                 }
         }
 }

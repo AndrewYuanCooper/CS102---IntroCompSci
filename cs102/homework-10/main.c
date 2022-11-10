@@ -7,8 +7,8 @@ int main( int argc, char** argv )
 	clear_maze();
         int i;
 	int j;
-	set_location_x(0)
-	set_location_y(0)
+	set_location_x(0);
+	set_location_y(0);
      
         print_walls();
         fprintf(stdout,"\n");
@@ -46,23 +46,21 @@ int main( int argc, char** argv )
                 {
                         move_up();
                 }
-                else if( sscanf(scratchpad, "wall %d", &i, &j ) ==1)
+                else if( sscanf(scratchpad, "wall %d %d", &i, &j ) ==1)
                 {
                         build_wall(i,j );
                 }
-                else if( sscanf(scratchpad, "empty %d", &i, &j) ==1)
+                else if( sscanf(scratchpad, "empty %d %d", &i, &j) ==1)
                 {
                         clear_wall( i, j );
                 }
-		else if( sscanf(scratchpad, "x %d", &i, &j) ==1)
+		else if( sscanf(scratchpad, "x %d %d", &i, &j) ==1)
                 {
                         set_location_x(i );
-                }
-		{
-			set_location_y(j );
+                	set_location_y(j );
 		}
                 print_walls();
-		fprintf(stdout, "\n");       
+		fprintf(stdout, "\n");
 	 }
 return 0;
 }
