@@ -31,7 +31,7 @@ void print_walls()
 	{
 		for( j=0; j<10; j++ )
 		{
-                	if( i == location_x )
+                	if( i == location_y && j == location_x)
                 	{
                 		fprintf( stdout, "x" );
                 	}
@@ -92,21 +92,21 @@ void move_left()
 
 void move_up()
 {
-        if( (location_y+1)>=0 )
+        if( (location_y-1)>=0 )
         {
                 if( is_wall( location_x ,location_y+1 ) != 1 )
                 {
-                        location_y = location_y + 1;
+                        location_y = location_y - 1;
                 }
         }
 }
 void move_down()
 {
-        if( (location_y-1)>=0 )
+        if( (location_y+1)>=0 )
         {
                 if( is_wall( location_x ,location_y-1 ) != 1 )
                 {
-                        location_y = location_y - 1;
+                        location_y = location_y + 1;
                 }
         }
 }
