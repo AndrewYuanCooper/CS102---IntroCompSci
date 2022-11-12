@@ -64,7 +64,11 @@ int main( int argc, char** argv )
                         set_location_x(j );
                 	set_location_y(i );
 		}
-                print_walls();
+		else if ( sscanf(scratchpad, "treasure %d %d", &i, &j) ==2)
+                {
+			add_treasure(i, j);
+		}
+		print_walls();
 		fprintf(stdout, "\n");
 	 }
 return 0;

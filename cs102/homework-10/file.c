@@ -25,6 +25,10 @@ void load( char* filename )
 	{
 	set_location_y( j);
 	}
+      else if (sscanf( scratchpad, "TREASURE %d %d", &i, &j)== 2)
+	{
+	add_treasure(j, i);
+	}
     }
     fclose(straw);
   }
@@ -45,6 +49,10 @@ void save(char* filename)
      if(is_wall(i, j)== 1)
      {
        fprintf( out, "WALL%d %d\n", i,j); 
+     }
+     else if( is_treasure(i, j)== 1)
+     {
+       fprintf( out, "TREASURE%d %d\n", i, j);
      }
     }
    fprintf( out, "X %d %d",get_location_x(),get_location_y());
