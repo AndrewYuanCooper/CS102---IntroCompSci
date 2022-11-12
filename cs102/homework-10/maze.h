@@ -13,4 +13,4 @@ int get_location_y();
 void set_location_y();
 void move_down();
 void move_up();
-void add_treasure(int x, int y);
+void set_treasure(int x, int y);

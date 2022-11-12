@@ -27,7 +27,7 @@ void load( char* filename )
 	}
       else if (sscanf( scratchpad, "TREASURE %d %d", &i, &j)== 2)
 	{
-	add_treasure(j, i);
+	set_treasure(j, i);
 	}
     }
     fclose(straw);
@@ -48,14 +48,14 @@ void save(char* filename)
     {
      if(is_wall(i, j)== 1)
      {
-       fprintf( out, "WALL%d %d\n", i,j); 
+       fprintf( out, "WALL%d %d\n", j,i);
      }
      else if( is_treasure(i, j)== 1)
      {
-       fprintf( out, "TREASURE%d %d\n", i, j);
+       fprintf( out, "TREASURE%d %d\n", j, i);
      }
     }
-   fprintf( out, "X %d %d",get_location_x(),get_location_y());
+   fprintf( out, "X %d \nY %d",get_location_x(),get_location_y());
    fclose( out);
   }
 }

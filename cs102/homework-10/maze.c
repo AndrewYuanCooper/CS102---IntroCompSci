@@ -125,7 +125,7 @@ int is_treasure (int x, int y)
         return maze[x][y].treasure;
 }
 
-void add_treasure( int x, int y)
+void set_treasure( int x, int y)
 {
     maze[x][y].treasure = 1;
 }

@@ -53,11 +53,11 @@ int main( int argc, char** argv )
                 }
                 else if( sscanf(scratchpad, "wall %d %d", &i, &j ) ==2)
                 {
-                        build_wall(i,j );
+                        build_wall( j,i );
                 }
                 else if( sscanf(scratchpad, "empty %d %d", &i, &j) ==2)
                 {
-                        clear_wall( i, j );
+                        clear_wall( j, i );
                 }
 		else if( sscanf(scratchpad, "x %d %d", &i, &j) ==2)
                 {
@@ -66,7 +66,7 @@ int main( int argc, char** argv )
 		}
 		else if ( sscanf(scratchpad, "treasure %d %d", &i, &j) ==2)
                 {
-			add_treasure(i, j);
+			set_treasure(j, i);
 		}
 		print_walls();
 		fprintf(stdout, "\n");
