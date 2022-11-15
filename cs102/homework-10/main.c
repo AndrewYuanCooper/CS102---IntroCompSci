@@ -59,10 +59,13 @@ int main( int argc, char** argv )
                 {
                         clear_wall( j, i );
                 }
-		else if( sscanf(scratchpad, "x %d %d", &i, &j) ==2)
+		else if( sscanf(scratchpad, "x %d", &j) ==1)
                 {
-                        set_location_x(j );
-                	set_location_y(i );
+                        set_location_y(j );
+		}
+		else if( sscanf(scratchpad, "y %d", &i) ==1)
+                {
+                	set_location_x(i );
 		}
 		else if ( sscanf(scratchpad, "treasure %d %d", &i, &j) ==2)
                 {

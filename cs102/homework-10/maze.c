@@ -33,7 +33,7 @@ void print_walls()
 		{
                 	if( i == location_x && j == location_y)
                 	{
-                		fprintf( stdout, "x" );
+                		fprintf( stdout, "x " );
                 	}
                 	else if( is_wall(i, j) )
                 	{
