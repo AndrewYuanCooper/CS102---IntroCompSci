@@ -1,11 +1,11 @@
 function changeColor(object)
 {
-  if( object.className == "a" )
+  if( object.className == "bird" )
   {
-    object.className = "b";
+    object.className = "dog";
   }
   else
   {
-    object.className = "a";
+    object.className = "bird";
   }
 }
